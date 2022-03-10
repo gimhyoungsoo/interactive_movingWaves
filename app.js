@@ -10,20 +10,19 @@ class App {
 
         this.wave = new Wave();
 
-        window.addEventListener('resize', this.resize.bind(this), false);
+        window.addEventListener('resize', this.resize.bind(this), false); //bind 
         this.resize();
 
         requestAnimationFrame(this.animate.bind(this));
     }
 
     resize() {
-        this.stageWidth = document.body.clientWidth;
-        this.stageHeight = document.body.clientHeight;
-        console.log("stageWidth:",this.stageWidth,"| stageHeight: ",this.stageHeight);
+        this.stageWidth = document.body.clientWidth
+        this.stageHeight = document.body.clientHeight
 
-        this.canvas.width = this.stageWidth * 2;
-        this.canvas.heigt = this.stageHeight * 2;
-        this.ctx.scale(2,2);
+        this.canvas.width = this.stageWidth * 2
+        this.canvas.height = this.stageHeight * 2
+        this.ctx.scale(2,2)
 
         this.wave.resize(this.stageWidth, this.stageHeight);
     }
